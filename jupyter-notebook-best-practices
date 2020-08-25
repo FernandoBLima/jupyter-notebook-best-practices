@@ -1,0 +1,1131 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2020-08-13T23:21:08.953644Z",
+     "start_time": "2020-08-13T23:21:08.950951Z"
+    },
+    "slideshow": {
+     "slide_type": "notes"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "from IPython.display import YouTubeVideo"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    },
+    "tags": [
+     "Content"
+    ]
+   },
+   "source": [
+    "    \n",
+    "<h1>Jupyter Notebook: Aplicando boas práticas de engenharia de software</h1>\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2020-08-13T21:59:09.832815Z",
+     "start_time": "2020-08-13T21:59:09.823722Z"
+    },
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "<div class=\"alert alert-info\">\n",
+    "\n",
+    "# Quem sou?\n",
+    "\n",
+    "- Fernando Baptistella de Lima\n",
+    "- github: limabfernando\n",
+    "    \n",
+    "<br>\n",
+    "  \n",
+    "</div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "### Agenda\n",
+    "- O que é notebook?\n",
+    "- Uso básico\n",
+    "- Por que discutir as boas práticas para data science?\n",
+    "- Como tentar melhorar o workflows durante a codificação em um notebook?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "### Vamos falar sobre notebook?\n",
+    "\n",
+    "- Originada em 2014 a partir do IPython, a partir da proposta de ter uma interface mais limpa e acessível do que um interpretador interativo.\n",
+    "- Estruturado no formato JSON para compartilhar códigos python.\n",
+    "\n",
+    "<table>\n",
+    "    <tr>\n",
+    "        <td><img src='./images/jupyter_notebook.png'></td>\n",
+    "        <td><img src='./images/colab.jpg'></td>\n",
+    "        <td><img src='./images/binder.png'></td>\n",
+    "        <td><img src='./images/azure.png'></td>\n",
+    "        <td><img src='./images/amazon.png'></td>\n",
+    "    </tr>\n",
+    "</table>\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "notes"
+    }
+   },
+   "source": [
+    "- Literate computing: Ambiente que permite aos usuários não apenas executar comandos interativamente, mas também adicionar documentação junto com figuras e texto de forma livre.\n",
+    "- Jupyter é uma referencia para as linguagens Julia, Python e R.\n",
+    "- Os notebooks fornecem um ambiente útil para a exploração interativa de dados. \n",
+    "- Desenvolvimento iterativo com Interface familiar\n",
+    "- Útil para aprendizagem, ensino, exploração e comunicação"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "# Componente básico"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2020-08-13T23:21:08.245626Z",
+     "start_time": "2020-08-13T23:21:08.236915Z"
+    },
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "4"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "2 + 2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2020-08-13T23:21:08.250615Z",
+     "start_time": "2020-08-13T23:21:08.247991Z"
+    },
+    "slideshow": {
+     "slide_type": "notes"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "from IPython.display import HTML, display"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2020-08-13T23:21:08.948536Z",
+     "start_time": "2020-08-13T23:21:08.252615Z"
+    },
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "outputs": [
+    {
+     "data": {
+      "image/png": "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\n",
+      "text/plain": [
+       "<Figure size 432x288 with 1 Axes>"
+      ]
+     },
+     "metadata": {
+      "needs_background": "light"
+     },
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "import matplotlib.pyplot as plt\n",
+    "plt.plot([1,4,6,14])\n",
+    "plt.ylabel('label y')\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<div class=\"alert alert-warning\">\n",
+    "\n",
+    "<h3> Como os Jupyter Notebook é uma ferramenta relativamente recentemente,\n",
+    "é comum não ser ainda bem difundido as melhores práticas de desenvolvimento de software. </h3>\n",
+    "</div>\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "<table style=\"height: 500px\">\n",
+    "    <tr>\n",
+    "        <td><img src=\"./images/image1.png\" width=\"500\" height=\"500\"></td>\n",
+    "        <td><img src=\"https://media.giphy.com/media/UnTC9o2HMyUta/giphy.gif\" width=\"500\"  height=\"500\"></td>\n",
+    "    </tr>\n",
+    "</table>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "<div class=\"alert alert-danger\">\n",
+    "\n",
+    "<h2> Qualidade de código é importante </h2>\n",
+    "    \n",
+    "</div>\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "#### The first great notebook war\n",
+    "\n",
+    "- IDEs vs Notebooks\n",
+    "- [Aprensentação na JupyterCon “I Don’t Like Notebooks”](https://docs.google.com/presentation/d/1n2RlMdmv1p25Xy5thJUhkKGvjtV-dkAIsUXP-AL4ffI/preview?slide=id.g362da58057_0_1)\n",
+    "- [5 reasons why jupyter notebooks sucks](https://towardsdatascience.com/5-reasons-why-jupyter-notebooks-suck-4dc201e27086)\n",
+    "- [Notebook war](https://yihui.org/en/2018/09/notebook-war/)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2020-08-13T23:21:09.366712Z",
+     "start_time": "2020-08-13T23:21:08.955879Z"
+    },
+    "slideshow": {
+     "slide_type": "-"
+    }
+   },
+   "outputs": [
+    {
+     "data": {
+      "image/jpeg": "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yetqFVvon5djr/lKtxK8/mJtDUHJw4/VeTTkOBsPWH0WMVE5rRvw4OH6LXLG6x23HPl3LffZzaWUlQbDQbha6OcnONND2pJASy+mtuJ5rRSwOBk7+3wU7RpudKTa5udvcNFqmmDbZjYHjY/DvXkcTnyNYPWcbD3ldVjmERDDnNt+5GdruOYbk964+neTrvJrGOYpsRgY3QPc7nl3+K01uKSTNLeqxnEa3PeVBYOR+a2EEjrEnlddcxcn321dILWu34Fdhg9WJoGu/iHVd3jx3965QNVlg1eIHEPsGOOpttpoT/fFTZpF7upa4LYDdU0uP042zP7m2+ZUN/lJ7MXxd4BQpquvoHAOLbb6qfdcZg+OySTxtygBzrXvfTiuyBWWXltj4ZXXhXi9VFnwFERSCIiAiIgIiICIiApNPXyxNLY5HNBNyBz/ALCjIgnjGqn75/xWDsWqDvK/49llDRBO9MVP3z/ipTfKqvAAFVJYaDbwVOiC0n8oqyQWfUPcO2yj+lqj713yUNFGondTDis5/wCK75LdS49Vw36Od7b72sq1E1E9V8bSp8RmkcXvkc5x3JWsVcntFaUTUWnLnPGV/bf55J7ZTzyT2ytCJqJ97k/K/tv89k9sp55J7ZWhE6Ye9yflf23+eSe2U88k9orQidM+D3uT8r+2/wA8k9orzzuT2itKJ0z4Pe5Pyv7bvOn+0VujxSdvqyuHwUNE1FbyZ3zasvT9X9+/5LFuOVQcHCZ+YbHRV6JqK9V+VpUeUdZK3LJUPc297G2/wUUYlMBYSG2/BRUUoTXYvUEWMziOV1GdO8m5cSVrRBn0ruZTpXc1giDYJnA3BN1u9IzfeO5qKiJ3YlnE5yb9I66SYlO+2aRxttsoiIbqYMVqBtM8e9eHFJzvM/4qIibQnemKm1unf8V4MXqRf9s/XfVQkTYnQ4zUxvD2TODwLA6XUibymrpGOY+pe5rhYg21HwVSiDcKqT2ivfPZPbK0Ip3RI8+l9sp59L7ZUdE3RI89l9srzzyT2ytCJuiXBik8bg5krmuGxFtFN+1df+Kk+XgqdFAuftXiH4qT5eCfavEPxUny8FTIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIg//Z\n",
+      "text/html": [
+       "\n",
+       "        <iframe\n",
+       "            width=\"900\"\n",
+       "            height=\"270\"\n",
+       "            src=\"https://www.youtube.com/embed/7jiPeIFXb6U\"\n",
+       "            frameborder=\"0\"\n",
+       "            allowfullscreen\n",
+       "        ></iframe>\n",
+       "        "
+      ],
+      "text/plain": [
+       "<IPython.lib.display.YouTubeVideo at 0x7fb582fd7c40>"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "YouTubeVideo('7jiPeIFXb6U', width=900, height=270)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "#### Principais pontos abordados pelas pessoas:\n",
+    "- Encorajam hábitos ruins\n",
+    "- Desencorajam modularidade e testes, Não tão prático para realizar testes.\n",
+    "- Inconsistente folder structure\n",
+    "- Versionamento de código\n",
+    "- Workflow não linear (Hidden state)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<div class=\"alert alert-info\">\n",
+    "\n",
+    "<h3> Por que devemos discutir boas práticas de engenharia de software no notebook?</h3>\n",
+    "Data analysis vs software engineering\n",
+    "</div>\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "notes"
+    }
+   },
+   "source": [
+    "Você já acabou vendo uma estrutura de diretório semelhante a esta?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "\n",
+    "<table style=\"height: 500px\">\n",
+    "    <tr>\n",
+    "        <td><img src=\"./images/undefined.png\" width=\"400\" height=\"400\"></td>\n",
+    "        <td><img src=\"./images/notebook_mess.png\" width=\"800\" height=\"500\"></td>\n",
+    "    </tr>\n",
+    "</table>\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "notes"
+    }
+   },
+   "source": [
+    "Ou uma estrutura de notebook igual abaixo:"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "\n",
+    "<table style=\"height: 100px\">\n",
+    "    <tr>\n",
+    "        <td><img src=\"./images/bad-example.png\" width=\"600\"  height=\"100\"></td>\n",
+    "        <td><img src=\"https://media.giphy.com/media/ZD8ZjehSsLDZQRKJjJ/giphy.gif\" width=\"700\" height=\"700\"></td>\n",
+    "    </tr>\n",
+    "</table>\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "<div class=\"alert alert-success\">\n",
+    "    <h2> Escreva programas para pessoas, não para computadores </h2>\n",
+    "</div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2020-08-20T00:34:58.900621Z",
+     "start_time": "2020-08-20T00:34:58.896013Z"
+    },
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "- Não ter apenas ofoco no resultado.\n",
+    "- A qualidade do código em ciência de dados é sobre correção e reprodutibilidae\n",
+    "- Tempo perdido"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<div class=\"alert alert-success\">\n",
+    "<h3>Como a partir deste estilo de exploração não linear, interativo e que costuma ter vários ciclos transformar para uma análise mais linear e reproduzível com base em código organizado, empacotado e testado?</h3>\n",
+    "</div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "notes"
+    }
+   },
+   "source": [
+    "- A maioria dos projetos de data-science tem as seguintes atividades:\n",
+    "    - ETL\n",
+    "    - Pré processamento dos dados\n",
+    "    - Criação dos modelos\n",
+    "    - Treino dos modelos\n",
+    "    - Análise das performances\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "### Os cadernos podem ser usados para escrever um relatório bem estruturado?\n",
+    "\n",
+    "\n",
+    "- [Artigo Best Practices for Scientific Computing](https://arxiv.org/pdf/1210.0530v3.pdf)\n",
+    "- [Jupyter Notebook Manifesto do Google](https://cloud.google.com/blog/products/ai-machine-learning/best-practices-that-can-improve-the-life-of-any-developer-using-jupyter-notebooks)\n",
+    "- [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "\n",
+    "### Estrutura do diretório\n",
+    "A estrutura do projeto tende a ser flexível! Consistência é uma das coisas mais importantes.\n",
+    "\n",
+    "<div class=\"alert\" style='background-color: gray;'>\n",
+    "\n",
+    "\t|- notebooks/\n",
+    "    |- data/\n",
+    "\t|- src/\n",
+    "    |- reports/\n",
+    "\t|- utils/\n",
+    "\t|- environment.yml\n",
+    "\t|- README.md\n",
+    "</div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "skip"
+    }
+   },
+   "source": [
+    "Exemplo de estrutura completa:\n",
+    "\n",
+    "\t|- notebooks/\n",
+    "\t   |- 00-first-logical-notebook.ipynb\n",
+    "\t   |- 01-second-logical-notebook.ipynb\n",
+    "\t   |- archive/\n",
+    "\t\t  |- no-longer-useful.ipynb\n",
+    "       |- figures/\n",
+    "          |- image1.png\n",
+    "\t|- src/\n",
+    "        |- __init__.py\n",
+    "        |- config.py\n",
+    "        |- data.py\n",
+    "        |- utils.py\n",
+    "\t|- README.md\n",
+    "    |- reports\n",
+    "       |- report1.csv\n",
+    "       |- report2.pdf\n",
+    "\t|- data/\n",
+    "\t   |- raw/\n",
+    "\t   |- processed/\n",
+    "\t   |- cleaned/\n",
+    "\t|- utils/\n",
+    "\t   |- script1.py\n",
+    "\t   |- script2.py\n",
+    "\t   |- archive/\n",
+    "\t      |- no-longer-useful.py\n",
+    "\t|- environment.yml"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "notes"
+    }
+   },
+   "source": [
+    "- Mas afinal, quando ser inconsistente!?\n",
+    "- Às vezes, as recomendações do guia de estilo simplesmente não são aplicáveis. \n",
+    "- Em caso de dúvida, use seu bom senso. E não hesite em perguntar!"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "### Data Pipeline\n",
+    "   \n",
+    "Os conjuntos de dados devem ser imutáveis.\n",
+    "   \n",
+    "<div class=\"alert\" style='background-color: gray;'>\n",
+    "\n",
+    "\t|- data/\n",
+    "        |- raw/ \n",
+    "        |- processed/ \n",
+    "        |- Intermeadiate/\n",
+    "        |- Externos/ \n",
+    "</div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "notes"
+    }
+   },
+   "source": [
+    "- raw: Diretório de dados brutos existem, somente leitura\n",
+    "- processed: Dados após todo o pré-processamento, fusão, limpeza, engenharia de recursos etc\n",
+    "- Intermeadiate:  Formato intermediário entre bruto e processado: Models, Outputs, Reports\n",
+    "- Externos/ (Dados considerados externos como: dicionários, sinônimos, etc."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2020-08-14T00:22:14.173762Z",
+     "start_time": "2020-08-14T00:22:14.168266Z"
+    },
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "### Como organizar um notebook\n",
+    "\n",
+    "- Notebooks não devem ser longos.\n",
+    "    - Quebrar em arquivos lógicos menores \n",
+    "    - Crie notebooks específicos com uma ordenação de arquivos..\n",
+    "- Recomendável mover o código para pacotes autônomos.\n",
+    "- Adicione títulos e descrições em Markdown para explicar os passos do workflow.\n",
+    "    - Documentar permitirá um maior entendimento, assim como fornecer orientação adicional para modificações"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "- As células devem conter apenas uma saída, lógica e seguir uma order.\n",
+    "- Tratar erros na saída das células.\n",
+    "- Importar código ao ínves de notebook\n",
+    "- Criar arquivos com 'logical chuncks'.\n",
+    "    - {algo-lógico}-notebook.ipynb "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<div class=\"alert\" style='background-color: gray;'>\n",
+    "\n",
+    "\t|- notebooks/\n",
+    "\t   |- 00-primeiro-notebook.ipynb\n",
+    "\t   |- 01-segundo-notebook.ipynb\n",
+    "\t   |- archive/\n",
+    "\t\t  |- no-longer-useful.ipynb\n",
+    "       |- figures/\n",
+    "          |- image1.png\n",
+    "       \n",
+    "</div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2020-08-14T00:20:03.004872Z",
+     "start_time": "2020-08-14T00:20:03.000514Z"
+    },
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<div class=\"alert alert-info\">\n",
+    "\n",
+    "<h1> Talk is cheap, show me the code </h1>\n",
+    "    \n",
+    "</div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "##### Use novas variaveis com nomes claros que revelem sobre o conteúdo. \n",
+    "\n",
+    "##### Explícito é melhor do que implícito"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "skip"
+    }
+   },
+   "source": [
+    "- Longa_descrição_nome\n",
+    "- Pronunciável e pesquisável\n",
+    "- Evitar abreviações, prefixos, sufixos\n",
+    "- Adicionar contexto significativo, assim como definir um padrão de nomenclatura"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2020-08-14T00:04:13.956032Z",
+     "start_time": "2020-08-14T00:04:13.947721Z"
+    },
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "\n",
+    "# Não faça isso\n",
+    "mnth = pd.DataFrame(data = {'janeiro': [1, 2], 'fevereiro': [3, 4], 'março': [5, 6], 'abril': [7, 8]})\n",
+    "mnth = mnth.filter(items=['janeiro', 'fevereiro'])\n",
+    "\n",
+    "# Faça isso\n",
+    "month_df = pd.DataFrame(data = {'janeiro': [1, 2], 'fevereiro': [3, None], 'março': [5, 6], 'abril': [7, None]})\n",
+    "monthly_filter_df = month_df.filter(items=['janeiro', 'fevereiro'])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "##### Don’t repeat yourself - DRY \n",
+    "##### Automatize tarefas repetitivas\n",
+    "##### Mantenha seu código organizado em módulos."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "monthly_filter_df.fillna({'fevereiro': 0})\n",
+    "monthly_filter_df.groupby(['fevereiro']).mean().sort_values(by='fevereiro')\n",
+    "\n",
+    "target = 'fevereiro'"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "##### Uma célula deve ter uma saída e finalidade\n",
+    "##### As funções devem fazer uma coisa. A divisão de funções leva à reutilização e testes mais fáceis.\n",
+    "##### Não use sinalizadores como parâmetros de função"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2020-08-14T00:16:57.454203Z",
+     "start_time": "2020-08-14T00:16:57.451613Z"
+    },
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'ola'"
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "def split_email(email: str, temp: bool):\n",
+    "    if temp:\n",
+    "        return email.split('@')[0]\n",
+    "    else:\n",
+    "        return email.split('@')[1]\n",
+    "\n",
+    "split_email('ola@tudobom.com', True)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "## Como aplicar os famosos teste unitários?\n",
+    "\n",
+    "Plano para erros a.k.a Programação defensiva.  Escreva e execute testes.\n",
+    "\n",
+    "- asserts\n",
+    "- Doctest\n",
+    "- unittest"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Asserts"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def multiplyBy(x, y):\n",
+    "    return x * y\n",
+    "\n",
+    "result = multiplyBy(2,3)\n",
+    "assert result == 6"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### doctest"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def add(a, b):\n",
+    "    '''\n",
+    "    This is a test:\n",
+    "    >>> add(2, 3)\n",
+    "    5\n",
+    "    '''\n",
+    "    return a + b"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Trying:\n",
+      "    add(2, 3)\n",
+      "Expecting:\n",
+      "    5\n",
+      "ok\n",
+      "3 items had no tests:\n",
+      "    __main__\n",
+      "    __main__.multiplyBy\n",
+      "    __main__.split_email\n",
+      "1 items passed all tests:\n",
+      "   1 tests in __main__.add\n",
+      "1 tests in 4 items.\n",
+      "1 passed and 0 failed.\n",
+      "Test passed.\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "TestResults(failed=0, attempted=1)"
+      ]
+     },
+     "execution_count": 38,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import doctest\n",
+    "doctest.testmod(verbose=True)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### unittest"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "test_add (__main__.TestNotebook) ... FAIL\n",
+      "\n",
+      "======================================================================\n",
+      "FAIL: test_add (__main__.TestNotebook)\n",
+      "----------------------------------------------------------------------\n",
+      "Traceback (most recent call last):\n",
+      "  File \"<ipython-input-39-58a42a45ede3>\", line 6, in test_add\n",
+      "    self.assertEqual(multiplyBy(5,2), 2)\n",
+      "AssertionError: 10 != 2\n",
+      "\n",
+      "----------------------------------------------------------------------\n",
+      "Ran 1 test in 0.001s\n",
+      "\n",
+      "FAILED (failures=1)\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "<unittest.main.TestProgram at 0x7f98c66cbca0>"
+      ]
+     },
+     "execution_count": 39,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import unittest\n",
+    "\n",
+    "class TestNotebook(unittest.TestCase):\n",
+    "    \n",
+    "    def test_add(self):\n",
+    "        self.assertEqual(multiplyBy(5,2), 2)\n",
+    "        \n",
+    "unittest.main(argv=[''], verbosity=2, exit=False)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "### Version Control"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "Os notebooks Jupyter possuem o formato JSON de texto simples. No entanto, diff e merge baseadas em linha são complicados para se lidar. Utilizando nbdime, por outro lado, ele entende a estrutura de documentos de notebook e mescla blocos de anotações, para:\n",
+    "\n",
+    "- Verificar as diferenças\n",
+    "- Realizar um merge"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "skip"
+    }
+   },
+   "source": [
+    "### Parameterized Notebooks\n",
+    "\n",
+    "papermill"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "### Productivity hacks\n",
+    "\n",
+    "- Table of Content\n",
+    "- Autopep8\n",
+    "- ExecuteTime\n",
+    "- Collapsible Headings\n",
+    "- Split Cells Notebook\n",
+    "- Gist-it\n",
+    "- nbdime"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2020-08-14T00:25:21.926062Z",
+     "start_time": "2020-08-14T00:25:21.924099Z"
+    },
+    "cell_style": "center",
+    "slideshow": {
+     "slide_type": "skip"
+    }
+   },
+   "source": [
+    "> #### Como instalar\n",
+    "> ##### pip install jupyter_contrib_nbextensions && jupyter contrib nbextension install\n",
+    "> ou\n",
+    "> ##### conda install -c conda-forge jupyter_contrib_nbextensions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2020-08-13T23:21:10.606843Z",
+     "start_time": "2020-08-13T23:21:10.602141Z"
+    },
+    "cell_style": "center",
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "499500"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Using for loop\n",
+    "total = 0\n",
+    "for i in range(1000):\n",
+    "    total += i\n",
+    "\n",
+    "total"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "skip"
+    }
+   },
+   "source": [
+    "### Referências\n",
+    "\n",
+    "- [Best Practices for Scientific Computing](https://arxiv.org/pdf/1210.0530v3.pdf)\n",
+    "- [Jupyter Notebook Manifesto](https://cloud.google.com/blog/products/ai-machine-learning/best-practices-that-can-improve-the-life-of-any-developer-using-jupyter-notebooks)\n",
+    "- [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)\n",
+    "- [5 reasons why jupyter notebooks sucks](https://towardsdatascience.com/5-reasons-why-jupyter-notebooks-suck-4dc201e27086)\n",
+    "- [Notebook war](https://yihui.org/en/2018/09/notebook-war/)\n",
+    "- [Coding habits data scientists](https://www.thoughtworks.com/insights/blog/coding-habits-data-scientists)\n",
+    "- [Jupyterlab-git](https://github.com/jupyterlab/jupyterlab-git)\n",
+    "- [Papermill](https://github.com/nteract/papermill)\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "<div class=\"alert alert-info\">\n",
+    "    \n",
+    "<h1>Trazendo o melhor do Jupyter Notebook nos hábitos de codificação para os cientistas de dados</h1>\n",
+    "<h2>Obrigado!</h2>    \n",
+    "<br><br>\n",
+    "</div>"
+   ]
+  }
+ ],
+ "metadata": {
+  "celltoolbar": "Slideshow",
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.3"
+  },
+  "rise": {
+   "enable_chalkboard": true
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": false,
+   "sideBar": true,
+   "skip_h1_title": false,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {},
+   "toc_section_display": true,
+   "toc_window_display": false
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
